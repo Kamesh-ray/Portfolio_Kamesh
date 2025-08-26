@@ -1,76 +1,100 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../CSS/Style.css';
 
 const LayoutHeader = () => {
-
-    const headerData = {
-          name: 'Kamesh.A',
-  title: 'Web Application Developer'
-    }
+  const headerData = {
+    name: 'Kamesh.A',
+    title: 'Web Application Developer'
+  };
 
   return (
-    <div>
-        {/* HEADER */}
-      <header className="container py-3 d-flex justify-content-between align-items-center border-bottom border-primary">
-        <div>
-          <h1 className="h3 mb-0" style={{color:"#7FFFD4"}}>{headerData.name}</h1>
-          <small style={{color:"#00ff00"}}>{headerData.title}</small>
+    <header className="container py-3 border-bottom border-primary">
+      <nav className="navbar navbar-expand-md navbar-dark">
+        <div className="container-fluid">
+          {/* Left Side - Name & Title */}
+          <div className="d-flex flex-column">
+            <h1 className="h4 mb-0" style={{ color: "#7FFFD4" }}>{headerData.name}</h1>
+            <small style={{ color: "#00ff00" }}>{headerData.title}</small>
+          </div>
+
+          {/* Hamburger Toggle for Mobile */}
+          <button 
+            className="navbar-toggler ms-auto" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* Collapsible Nav Links */}
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <NavLink 
+                  to="/" 
+                  className={({ isActive }) => 
+                    `nav-link fw-bold ${isActive ? "active-link" : ""}`
+                  }
+                  style={{ color: "#0FF0FC" }}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink 
+                  to="/pages/Skillset" 
+                  className={({ isActive }) => 
+                    `nav-link fw-bold ${isActive ? "active-link" : ""}`
+                  }
+                  style={{ color: "#0FF0FC" }}
+                >
+                  Skills
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink 
+                  to="/pages/About" 
+                  className={({ isActive }) => 
+                    `nav-link fw-bold ${isActive ? "active-link" : ""}`
+                  }
+                  style={{ color: "#0FF0FC" }}
+                >
+                  About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink 
+                  to="/pages/Projects" 
+                  className={({ isActive }) => 
+                    `nav-link fw-bold ${isActive ? "active-link" : ""}`
+                  }
+                  style={{ color: "#0FF0FC" }}
+                >
+                  Projects
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink 
+                  to="/pages/Contact" 
+                  className={({ isActive }) => 
+                    `nav-link fw-bold ${isActive ? "active-link" : ""}`
+                  }
+                  style={{ color: "#0FF0FC" }}
+                >
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav>
-  <NavLink 
-    to="/" 
-    className={({ isActive }) => 
-      `me-3 text-decoration-none fw-bold ${isActive ? "active-link" : ""}`
-    }
-    style={{ color: "#0FF0FC" }}
-  >
-    Home
-  </NavLink>
+      </nav>
+    </header>
+  );
+};
 
-  <NavLink 
-    to="/pages/Skillset" 
-    className={({ isActive }) => 
-      `me-3 text-decoration-none fw-bold ${isActive ? "active-link" : ""}`
-    }
-    style={{ color: "#0FF0FC" }}
-  >
-    Skills
-  </NavLink>
-
-  <NavLink 
-    to="/pages/About" 
-    className={({ isActive }) => 
-      `me-3 text-decoration-none fw-bold ${isActive ? "active-link" : ""}`
-    }
-    style={{ color: "#0FF0FC" }}
-  >
-    About
-  </NavLink>
-
-  <NavLink 
-    to="/pages/Projects" 
-    className={({ isActive }) => 
-      `me-3 text-decoration-none fw-bold ${isActive ? "active-link" : ""}`
-    }
-    style={{ color: "#0FF0FC" }}
-  >
-    Projects
-  </NavLink>
-
-  <NavLink 
-    to="/pages/Contact" 
-    className={({ isActive }) => 
-      `me-3 text-decoration-none fw-bold ${isActive ? "active-link" : ""}`
-    }
-    style={{ color: "#0FF0FC" }}
-  >
-    Contact
-  </NavLink>
-</nav>
-      </header>
-    </div>
-  )
-}
-
-export default LayoutHeader
+export default LayoutHeader;
