@@ -1,11 +1,11 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import '../CSS/Style.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "../CSS/Style.css";
 
 const LayoutHeader = () => {
   const headerData = {
-    name: 'Kamesh.A',
-    title: 'Web Application Developer'
+    name: "Kamesh.A",
+    title: "Web Application Developer",
   };
 
   return (
@@ -14,30 +14,32 @@ const LayoutHeader = () => {
         <div className="container-fluid">
           {/* Left Side - Name & Title */}
           <div className="d-flex flex-column">
-            <h1 className="h4 mb-0" style={{ color: "#7FFFD4" }}>{headerData.name}</h1>
+            <h1 className="h4 mb-0" style={{ color: "#7FFFD4" }}>
+              {headerData.name}
+            </h1>
             <small style={{ color: "#00ff00" }}>{headerData.title}</small>
           </div>
 
           {/* Hamburger Toggle for Mobile */}
-          <button 
-            className="navbar-toggler ms-auto" 
-            type="button" 
-            data-bs-toggle="collapse" 
+          <button
+            className="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
-            aria-controls="navbarNav" 
-            aria-expanded="false" 
+            aria-controls="navbarNav"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           {/* Collapsible Nav Links */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
+          <div className="collapse navbar-collapse mt-3 mt-md-0" id="navbarNav">
+            <ul className="navbar-nav ms-auto text-center">
               <li className="nav-item">
-                <NavLink 
-                  to="/" 
-                  className={({ isActive }) => 
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
                     `nav-link fw-bold ${isActive ? "active-link" : ""}`
                   }
                   style={{ color: "#0FF0FC" }}
@@ -46,9 +48,9 @@ const LayoutHeader = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink 
-                  to="/pages/Skillset" 
-                  className={({ isActive }) => 
+                <NavLink
+                  to="/pages/Skillset"
+                  className={({ isActive }) =>
                     `nav-link fw-bold ${isActive ? "active-link" : ""}`
                   }
                   style={{ color: "#0FF0FC" }}
@@ -57,9 +59,9 @@ const LayoutHeader = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink 
-                  to="/pages/About" 
-                  className={({ isActive }) => 
+                <NavLink
+                  to="/pages/About"
+                  className={({ isActive }) =>
                     `nav-link fw-bold ${isActive ? "active-link" : ""}`
                   }
                   style={{ color: "#0FF0FC" }}
@@ -68,9 +70,9 @@ const LayoutHeader = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink 
-                  to="/pages/Projects" 
-                  className={({ isActive }) => 
+                <NavLink
+                  to="/pages/Projects"
+                  className={({ isActive }) =>
                     `nav-link fw-bold ${isActive ? "active-link" : ""}`
                   }
                   style={{ color: "#0FF0FC" }}
@@ -79,9 +81,9 @@ const LayoutHeader = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink 
-                  to="/pages/Contact" 
-                  className={({ isActive }) => 
+                <NavLink
+                  to="/pages/Contact"
+                  className={({ isActive }) =>
                     `nav-link fw-bold ${isActive ? "active-link" : ""}`
                   }
                   style={{ color: "#0FF0FC" }}
